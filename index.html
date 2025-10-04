@@ -3,35 +3,100 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Research Portfolio Forum</title>
+  <title>Eastlake High School Psych Club</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Research Portfolio Forum</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
+  <button class="dark-toggle" onclick="toggleDarkMode()">🌓 Toggle Dark Mode</button>
+
+  <div class="layout">
+    <nav class="sidebar">
+      <h2>🧭 Navigation</h2>
+      <ul>
+        <li><a href="#submission-section">Submit</a></li>
+        <li><a href="#posts-section">Submissions</a></li>
+        <li><a href="#powerpoints-section">Presentations</a></li>
+        <li><a href="#calendar-container">Events</a></li>
+      </ul>
     </nav>
-  </header>
 
-  <main>
-    <section id="intro">
-      <h2>Welcome!</h2>
-      <p>This forum highlights student research and collaboration projects.</p>
-      <button id="newPostBtn">Add a Research Project</button>
-    </section>
+    <div class="main-content">
+      <header>
+        <h1>Eastlake Psych Club</h1>
+        <p class="tagline">🔬 Research. Curiosity. Student Voice.</p>
+      </header>
 
-    <section id="posts">
-      <h3>Recent Projects</h3>
-      <div id="postList"></div>
-    </section>
-  </main>
+      <main class="content-wrapper">
+        <section id="submission-section" class="card full">
+          <h2>✍️ Submit Your Research Blog Post</h2>
+          <form id="submission-form">
+            <input type="text" id="author" placeholder="Your name" required />
+            <select id="category" required>
+              <option value="">Select Category</option>
+              <option value="Cognitive Science">Cognitive Science</option>
+              <option value="Neuroscience">Neuroscience</option>
+              <option value="Psychology">Psychology</option>
+              <option value="Clinical Psychology">Clinical Psychology</option>
+              <option value="Behavioral Psychology">Behavioral Psychology</option>
+              <option value="AI">AI</option>
+            </select>
+            <textarea id="entry" placeholder="Write your blog post using **bold**, *italic*, and # headers..." required></textarea>
+            <button type="submit">Publish Post</button>
+          </form>
+        </section>
 
-  <footer>
-    <p>© 2025 Research Portfolio Forum | Built by Isha Sudhir</p>
-  </footer>
+        <section id="posts-section" class="card full">
+          <h2>🧠 Student Submissions</h2>
+          <div class="filters">
+            <input type="text" id="search-input" placeholder="Search posts..." />
+            <select id="filter-category">
+              <option value="all">All Categories</option>
+              <option value="Cognitive Science">Cognitive Science</option>
+              <option value="Neuroscience">Neuroscience</option>
+              <option value="Psychology">Psychology</option>
+              <option value="Clinical Psychology">Clinical Psychology</option>
+              <option value="Behavioral Psychology">Behavioral Psychology</option>
+              <option value="AI">AI</option>
+            </select>
+          </div>
+          <div id="posts"></div>
+        </section>
 
+        <section id="powerpoints-section" class="card full">
+          <h2>📊 Past Presentations</h2>
+          <div id="powerpoint-gallery">
+            <div class="ppt-card">
+              <iframe src="https://docs.google.com/presentation/d/1CayrpTzV_yZMzkn06hvN66k4-kvpH9gLNM3HIL-MnTw/embed?start=false&loop=false&delayms=3000" frameborder="0" allowfullscreen></iframe>
+              <p>Neuroscience & Behavior</p>
+            </div>
+            <div class="ppt-card">
+              <iframe src="YOUR_EMBED_URL" frameborder="0" allowfullscreen></iframe>
+              <p>Example Title</p>
+            </div>
+          </div>
+        </section>
+
+        <aside id="calendar-container" class="card">
+          <h2>📅 Upcoming Events</h2>
+          <div id="calendar"></div>
+          <div id="event-details"></div>
+        </aside>
+      </main>
+
+      <footer>
+        <p>&copy; 2025 Eastlake Psych Club — Designed with ❤️</p>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
